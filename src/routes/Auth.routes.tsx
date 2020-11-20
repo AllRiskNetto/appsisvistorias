@@ -5,7 +5,7 @@ import Login from '../pages/Login';
 
 const Auth = createStackNavigator();
 
-import LaudoRoutes from './laudo.routes';
+import LaudoRoutes from './Laudo.routes';
 
 const AuthRoutes: React.FC = () => (
   <Auth.Navigator
