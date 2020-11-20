@@ -2,12 +2,12 @@ import React from 'react';
 
 import {Container, Title} from './style';
 
-const Login: React.FC = () => {
+const NovoLaudo: React.FC = () => {
   return (
     <Container>
-      <Title>NAVEGAMOS</Title>
+      <Title>Novo Laudo</Title>
     </Container>
   );
 };
 
-export default Login;
+export default NovoLaudo;

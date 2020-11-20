@@ -2,9 +2,10 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import Login from '../pages/Login';
-import Dashboard from '../pages/Dashboard';
 
 const Auth = createStackNavigator();
+
+import LaudoRoutes from './laudo.routes';
 
 const AuthRoutes: React.FC = () => (
   <Auth.Navigator
@@ -13,7 +14,7 @@ const AuthRoutes: React.FC = () => (
       cardStyle: {backgroundColor: '#f5f5f5'},
     }}>
     <Auth.Screen name="Login" component={Login} />
-    <Auth.Screen name="Dashboard" component={Dashboard} />
+    <Auth.Screen name="Laudo" component={LaudoRoutes} />
   </Auth.Navigator>
 );
 

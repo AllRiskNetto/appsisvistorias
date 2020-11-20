@@ -23,6 +23,10 @@ const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
 
+  const handleRecover = function () {
+    navigation.navigate('RecoverSenha');
+  };
+
   const handleLogin = useCallback(
     async (dataForm) => {
       try {
@@ -35,7 +39,7 @@ const Login: React.FC = () => {
 
         const user = response.data[0];
         console.log(user);
-        navigation.navigate('Dashboard');
+        navigation.navigate('Laudo');
       } catch (err) {
         Alert.alert('Atenção', 'Login ou senha invalidos');
       }
@@ -74,7 +78,10 @@ const Login: React.FC = () => {
         Entrar
       </Button>
 
-      <ForgotPassword>
+      <ForgotPassword
+        onPress={() => {
+          handleRecover;
+        }}>
         <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
       </ForgotPassword>
       <Footer>
