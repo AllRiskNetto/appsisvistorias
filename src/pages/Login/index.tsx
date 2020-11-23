@@ -1,7 +1,7 @@
 import React, {useCallback, useRef} from 'react';
 import {Alert} from 'react-native';
 import api from '../../services/api';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import {Form} from '@unform/mobile';
 import {FormHandles} from '@unform/core';
@@ -38,7 +38,8 @@ const Login: React.FC = () => {
         const response = await api.post('Login/Authenticate', payload);
 
         const user = response.data[0];
-        console.log(user);
+        await AsyncStorage.setItem('@user', JSON.stringify(user));
+        console.log(user.token);
         navigation.navigate('Laudo');
       } catch (err) {
         Alert.alert('Atenção', 'Login ou senha invalidos');
